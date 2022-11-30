@@ -10,11 +10,15 @@
     
     <?php foreach ($tasks as $task) : ?>
         <li>
-            <?php if ( $task->isComplete() ): ?>
+            <?php if ( $task->is_completed ): ?>
                 <strike>
             <?php endif; ?>
+
+
                 <?= $task->description; ?>
-            <?php if ( $task->isComplete() ): ?>
+
+
+            <?php if ( $task->is_completed ): ?>
                 </strike>
             <?php endif; ?>
 

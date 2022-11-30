@@ -1,39 +1,13 @@
 <?php
+require_once 'Task.php';
+require_once 'function.php';
+require_once 'database/Connection.php';
 
 
-
-class Task {
-
-
-    public $description;
-    public $is_compleeted = false;
+$pdo = Connection::make();
+$tasks = fetchallTask($pdo);
 
 
-    public function __construct($desc)
-    {
-        $this->description = $desc;
-    }
-
-    public function isComplete()
-    {
-        return $this->is_compleeted;
-    }
-
-    public function Complete()
-    {
-        $this->is_compleeted = true;
-    }
-}
-
-
-$tasks =[
-    new Task('Go to the store'),
-    new Task('Go inside store'),
-    new Task('Buy milk'),
-    new Task('buy smoke')
-];
-
-$tasks[0]->Complete();
 
 
 require 'index.view.php';
