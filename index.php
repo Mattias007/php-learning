@@ -2,9 +2,8 @@
 
 $query = require_once 'bootstrap.php';
 
-$query = new QueryBuilder($pdo);
 
-$tasks = $query->selectAll('tasks','');
+$tasks = $query->selectAll('tasks');
 
 
 
