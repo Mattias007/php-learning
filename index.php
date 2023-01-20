@@ -1,10 +1,11 @@
 <?php
 
-$query = require_once 'bootstrap.php';
+$db = require_once ('core/bootstrap.php');
 
+$router = new Router;
 
-$tasks = $query->selectAll('tasks');
+require_once ('routes.php');
 
+$uri = trim($_SERVER['REQUEST_URI'], '/');
 
-
-require 'index.view.php';
+require_once ($router->direct($uri));

@@ -8,6 +8,13 @@
 </head>
 <body>
     
+    <nav>
+        <li><a href="contact">contact</a></li>
+        <li><a href="about">about</a></li>
+        <li><a href="about/culture">culture</a></li>
+    </nav>
+
+
     <?php foreach ($tasks as $task) : ?>
         <li>
             <?php if ( $task->is_completed ): ?>
