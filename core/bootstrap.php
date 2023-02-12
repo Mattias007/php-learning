@@ -4,16 +4,22 @@ ini_set('display_error', 1);
 ini_set('display_startup_error', 1);
 error_reporting(E_ALL);
 
-$app = [];
+App::bind('config',require 'config.php');
 
 
-$app['config'] = require_once 'config.php';
+
+App::bind('database', new QueryBuilder(
+    Connection::make(App::get('config')['database'])
+));
+    
+    
+    
+function view($name, $data = [])
+{
+    extract($data);
+    return require_once("views/{$name}.view.php");
+};
 
 
-require_once 'core/database/Request.php';
-require_once 'core/database/Connection.php';
-require_once 'core/database/QueryBuilder.php';
-require_once 'core/Router.php';
 
-$app['database'] = new QueryBuilder(
-    Connection::make($app['config']['database']));
+

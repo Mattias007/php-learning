@@ -1,8 +1,8 @@
 <?php
+$router->get('','PagesController@home');
+$router->get('about','PagesController@about');
+$router->get('about/culture','PagesController@aboutculture');
+$router->get('culture','PagesController@culture');
+$router->get('contact','PagesController@contact');
 
-$router -> define([
-    ''=> 'controllers/index.php',
-    'about'=>'controllers/about.php',
-    'about/culture'=>'controllers/culture.php',
-    'contact'=>'controllers/contact.php',
-]);
+$router->post('task','controllers/add-task.php');

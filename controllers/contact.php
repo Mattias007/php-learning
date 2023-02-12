@@ -1,6 +1,6 @@
 <?php
 
-$contacts = $app['database']->selectAll('contacts');
+$contacts = App::get('database')->selectAll('contacts');
 
 
 

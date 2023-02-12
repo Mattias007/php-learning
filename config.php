@@ -7,6 +7,8 @@ return [
         'user'=>'root',
         'pass'=>'',
         'charset'=>'utf8mb4',
-        'options'=>[]
+        'options'=>[
+           
+        ]
     ]
 ];
