@@ -1,8 +1,9 @@
 <?php
 $router->get('','PagesController@home');
 $router->get('about','PagesController@about');
-$router->get('about/culture','PagesController@aboutculture');
+$router->get('culture/about','PagesController@aboutCulture');
 $router->get('culture','PagesController@culture');
 $router->get('contact','PagesController@contact');
 
-$router->post('task','controllers/add-task.php');
+$router->get('tasks','TaskController@index');
+$router->post('tasks/add','TaskController@addtask');

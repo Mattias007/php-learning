@@ -2,21 +2,41 @@
 
 class PagesController {
     public function home () {
-        $tasks = App::get('database')->selectAll('tasks');
+        
 
 
-        return view('index', ['tasks'=>$tasks]);
+        return view('index');
     }
 
+    
     public function about () {
         
-        return view('about');
+        return view('about',['title' => 'About me']);
     }
+
 
     public function culture () {
         
         
         return view('culture');
+    }
+
+
+    public function aboutculture () {
+        
+        
+        return view('aboutCulture');
+    }
+
+
+    public function contact () {
+        
+        
+        $contacts = App::get('database')->selectAll('contacts');
+
+
+
+        return view('contact', ['contacts'=>$contacts]);
     }
 
 
