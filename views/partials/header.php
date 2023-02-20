@@ -16,4 +16,5 @@
         <li><a href="/culture/about">aboutculture</a></li>
         <li><a href="/">home</a></li>
         <li><a href="/tasks">tasks</a></li>
+        <li><a href="/blogi">blogi</a></li>
 </nav>
