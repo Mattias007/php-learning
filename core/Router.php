@@ -1,4 +1,6 @@
 <?php
+
+
 class Router {
     
     protected $routes = [
@@ -43,7 +45,11 @@ class Router {
 
 
     protected function callAction($conrtroller, $action){
+
+        $conrtroller = "App\\Controllers\\{$conrtroller}";
         $conrtroller = new $conrtroller;
+
+
         if (!method_exists($conrtroller, $action)) {
             throw new Exception(
                 "{$conrtroller} does not respond to the {$action}"

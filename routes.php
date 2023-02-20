@@ -6,4 +6,4 @@ $router->get('culture','PagesController@culture');
 $router->get('contact','PagesController@contact');
 
 $router->get('tasks','TaskController@index');
-$router->post('tasks/add','TaskController@addtask');
+$router->post('tasks','TaskController@store');

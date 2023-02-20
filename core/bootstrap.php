@@ -1,4 +1,6 @@
 <?php
+use App\Core\App;
+use App\Core\Database\Connection;
 
 ini_set('display_error', 1);
 ini_set('display_startup_error', 1);
