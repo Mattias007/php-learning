@@ -34,6 +34,19 @@ class QueryBuilder{
             die('UPS midagi laks valesti');
         }
     }
+
+    public function delete ($table ,$parameters){
+        $stmt = $this->pdo->prepare("DELETE FROM {$table} WHERE {$parameters}");
+        
+        $stmt -> execute();
+    }
+
+    public function update ($table,$column,$value,$parameters){
+        $stmt = $this->pdo->prepare("UPDATE {$table} SET {$column} = '{$value}' WHERE {$parameters}");
+        
+        $stmt -> execute();
+    }
 }
+
 
 

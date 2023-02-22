@@ -8,3 +8,8 @@ $router->get('blogi','BlogiController@index');
 
 $router->get('tasks','TaskController@index');
 $router->post('tasks','TaskController@store');
+
+
+$router->post('blogi','BlogiController@store');
+$router->post('delete','BlogiController@delete');
+$router->post('modify','BlogiController@update');

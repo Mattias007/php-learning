@@ -6,16 +6,36 @@ use App\Core\App;
 
 class BlogiController{
     public function index(){
-
-        return view('blogi');
+                $blogi = App::get('database')->selectAll('blogi');
+        return view('blogi', ['blogi'=> $blogi]);
     }
 
     public function store(){
 
         App::get('database')->insert('blogi',[
-            'blogi' => $_POST['blogi']
+            'text' => $_POST['postitus']
         ]);
-        
+
         header('Location: /blogi');
+    }
+
+    public function delete(){
+        $id=$_POST['id'];
+
+        App::get('database')->delete('blogi',"id = $id");
+
+
+        header('Location: /blogi');
+
+    }
+
+    public function update(){
+        $id=$_POST['id'];
+        $textupdate=$_POST['textupdate'];
+        App::get('database')->update('blogi','text', "$textupdate" ,"id = $id",);
+
+
+        header('Location: /blogi');
+
     }
 }
