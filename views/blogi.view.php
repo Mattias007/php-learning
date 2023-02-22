@@ -28,10 +28,11 @@
             <input type="submit"value="M">
         </form>
 
-    <div>
-        <h3><?= $blog->timestamp; ?></h3>
+    <div class="timebox">
+        <h3><?= $blog->timestamp; ?>
+        <h3><?php if ( $blog->modified) echo "(modified)"   ?></h3>
     </div>
-    
+
 
 
     <div>
@@ -40,7 +41,7 @@
             <input type="submit"value="X">
         </form>
 
-        <button onclick="edditfunction(<?=$blog->id ?>)">M</button>
+        <input type="button" value="M" onclick="edditfunction(<?=$blog->id ?>)"></input>
 
 
     </div>
