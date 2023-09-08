@@ -31,11 +31,11 @@ class QueryBuilder{
             $stmt = $this->pdo->prepare($sql);
             $stmt->execute($parameters);
         } catch ( Exception $e) {
-            die('UPS midagi laks valesti');
+            die("UPS midagi laks valesti $e");
         }
     }
 
-    public function delete ($table ,$parameters){
+    public function s ($table ,$parameters){
         $stmt = $this->pdo->prepare("DELETE FROM {$table} WHERE {$parameters}");
         
         $stmt -> execute();
@@ -45,6 +45,22 @@ class QueryBuilder{
         $stmt = $this->pdo->prepare("UPDATE {$table} SET {$column} = '{$value}' WHERE {$parameters}");
         
         $stmt -> execute();
+    }
+
+    public function delete ($table,$parameters) {
+        $sql = sprintf(
+            'DELETE FROM %s WHERE (%s) = (%s);',
+            $table,
+            implode(',', array_keys($parameters)),
+            ':'. implode(', :',array_keys($parameters)),
+        );
+        var_dump($sql);
+        try{
+            $stmt = $this->pdo->prepare($sql);
+            $stmt->execute($parameters);
+        } catch ( Exception $e) {
+            die("UPS midagi laks valesti $e");
+        }
     }
 }
 

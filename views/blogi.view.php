@@ -18,7 +18,7 @@
         
 <div>
 
-    <div id="info<?=$blog->id ?>" style="display:block;">
+    <div id="info<?=$blog->id ?>" style="display: block;">
         <h1><?= $blog->text; ?> </h1>
     </div>
 
@@ -53,18 +53,18 @@
 
 <script>
     function edditfunction(id){
-       var blogi = document.getElementById('edditform'+id);
+       var blogi = document.getElementById('edditform' + id);
        if (blogi.style.display === "none") {
-        blogi.style.display = "block";
+            blogi.style.display = "block";
         } 
         else {
             blogi.style.display = "none";
         }
 
 
-        var blogi2 = document.getElementById('info'+id);
+        var blogi2 = document.getElementById('info' + id);
         if (blogi2.style.display === "none") {
-        blogi2.style.display = "block";
+            blogi2.style.display = "block";
         } 
         else {
             blogi2.style.display = "none";
